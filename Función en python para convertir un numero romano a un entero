@@ -1,0 +1,15 @@
+def conversion_numeros (romano):
+     
+     valores = {'M' : 1000,'D' : 500,'C' : 100,'L' : 50,'X' : 10,'V' : 5,'I' : 1 }
+     entero = 0 
+     if (len(romano) == 0):  
+          return ''
+     else:
+          for i in range(len(romano)):
+               if (valores [romano[i]] > valores [romano[i - i]]):
+                    entero +=  valores [romano[i]] - 2 * valores[romano [i - i ]]  
+               else:
+                    entero += valores[romano[i]] 
+          return entero
+     
+print (conversion_numeros('IX'))
